@@ -1,5 +1,9 @@
 AdaBatch
 
+# Work
+Our job is to reproduce this paper：《AdaBatch: adaptive batch sizes for training deep neural networks》
+In our work, we use adabatch technology to train the neural network architecture only in Alexnet, Resnet-20 and VGG on cifar-10 and cifar-100 datasets. We have done a single nividia Tesla T4 GPU and three GPUs parallel training experiments.
+
 # AdaBatch-numerical-experiments
 Numerical experiments for 《AdaBatch: adaptive batch sizes for training deep neural networks》
 
@@ -32,40 +36,17 @@ Implementation
 
 **CIFAR**.  Our implementation of AdaBatch for the CIFAR-10 and
 CIFAR-100 datasets is contained in:
+**1.Single GPU**
 
     adabatch_cifar.py
-
-This script is based on Wei Yang's [CIFAR example code][] and uses his
-PyTorch models, which are contained in the `models` directory.
-
-**ImageNet**.  Our implementation of AdaBatch for the ImageNet dataset
-is contained in:
-
-    adabatch_imagenet.py
-
-and is based on the PyTorch [ImageNet example code][].
-
-Examples
---------
-
-Scripts to run our experiments can be found in the `tests` directory.
-To use these scripts, you need to navigate to the test directory
-
-    $ cd test
-
-Run the CIFAR-10/100 data set with ResNet-20 network and 512 batch size
-
-    $ ./run_cifar_exp.sh resnet 20 512
-
-Run the ImageNet data set with ResNet-50 network and 512 batch size
-
-    $ ./run_adabatch_imagenet.sh resnet 50 512
+  
+**2.Multi GPU**
+three nodes：
+    cifar_dis.py --world-size 3 --rank 0
+    cifar_dis.py --world-size 3 --rank 1
+    cifar_dis.py --world-size 3 --rank 2
 
 References
 ----------
 
 A. Devarakonda, M. Naumov and M. Garland, "AdaBatch: Adaptive Batch Sizes for Training Deep Neural Networks", Technical Report, [ArXiv:1712.02029](https://arxiv.org/abs/1712.02029), December 2017. 
-
-[CIFAR example code]: https://github.com/bearpaw/pytorch-classification/tree/master/models/cifar
-
-[ImageNet example code]: https://github.com/pytorch/examples/tree/master/imagenet
