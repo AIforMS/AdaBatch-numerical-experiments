@@ -36,17 +36,23 @@ Implementation
 
 **CIFAR**.  Our implementation of AdaBatch for the CIFAR-10 and
 CIFAR-100 datasets is contained in:
+
 **1.Single GPU**
 
     adabatch_cifar.py
   
 **2.Multi GPU**
+
 three nodes：
-    cifar_dis.py --world-size 3 --rank 0
-    cifar_dis.py --world-size 3 --rank 1
-    cifar_dis.py --world-size 3 --rank 2
+```shell
+cifar_dis.py --world-size 3 --rank 0
+cifar_dis.py --world-size 3 --rank 1
+cifar_dis.py --world-size 3 --rank 2
+```
 
 References
 ----------
 
 A. Devarakonda, M. Naumov and M. Garland, "AdaBatch: Adaptive Batch Sizes for Training Deep Neural Networks", Technical Report, [ArXiv:1712.02029](https://arxiv.org/abs/1712.02029), December 2017. 
+
+B.Source code link：https://github.com/NVlabs/AdaBatch
