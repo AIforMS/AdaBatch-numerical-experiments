@@ -144,3 +144,7 @@ References
 A. Devarakonda, M. Naumov and M. Garland, "AdaBatch: Adaptive Batch Sizes for Training Deep Neural Networks", Technical Report, [ArXiv:1712.02029](https://arxiv.org/abs/1712.02029), December 2017. 
 
 B. Official code link：https://github.com/NVlabs/AdaBatch
+
+[CIFAR example code]: https://github.com/bearpaw/pytorch-classification/tree/master/models/cifar
+
+[ImageNet example code]: https://github.com/pytorch/examples/tree/master/imagenet
